@@ -1,6 +1,29 @@
 <html>
 <body>
-  <h1>IMG</h1>
-  <img src="img_1339.jpg">
+  <p>
+    <input id="prev" type="button" value="Prev">
+    <input id="next" type="button" value="Next">
+  </p>
+  <img src="1.jpg" width="800" id="img">
 </body>
+<script>
+  var prev=document.getElementById("prev")
+  var next=document.getElementById("next")
+  var max = 178
+
+  prev.onclick = function() {
+    fields=pic.src.split("/")
+    num=Number(fields[4].split(".")[0])
+    newNum = ((num == 1) ? max : num - 1)
+    pic.src=newNum+'.jpg'
+  }
+  var pic=document.getElementById("img")
+
+  next.onclick = function() {
+    fields=pic.src.split("/")
+    num=Number(fields[4].split(".")[0])
+    newNum = ((num == max) ? 1 : num + 1)
+    pic.src=newNum+'.jpg'
+  }
+</script>
 </html>
