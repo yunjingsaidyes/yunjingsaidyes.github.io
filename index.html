@@ -13,7 +13,8 @@
 
   prev.onclick = function() {
     fields=pic.src.split("/")
-    num=Number(fields[4].split(".")[0])
+    len=fields.length
+    num=Number(fields[len-1].split(".")[0])
     newNum = ((num == 1) ? max : num - 1)
     pic.src=newNum+'.jpg'
   }
@@ -21,7 +22,8 @@
 
   next.onclick = function() {
     fields=pic.src.split("/")
-    num=Number(fields[4].split(".")[0])
+    len=fields.length
+    num=Number(fields[len-1].split(".")[0])
     newNum = ((num == max) ? 1 : num + 1)
     pic.src=newNum+'.jpg'
   }
